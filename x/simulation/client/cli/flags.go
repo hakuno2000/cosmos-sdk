@@ -18,8 +18,8 @@ var (
 	FlagExportStatePathValue    string
 	FlagExportStatsPathValue    string
 	FlagSeedValue               int64
-	FlagInitialBlockHeightValue int
-	FlagNumBlocksValue          int
+	FlagInitialBlockHeightValue uint64
+	FlagNumBlocksValue          uint64
 	FlagBlockSizeValue          int
 	FlagLeanValue               bool
 	FlagCommitValue             bool
@@ -42,8 +42,8 @@ func GetSimulatorFlags() {
 	flag.IntVar(&FlagExportParamsHeightValue, "ExportParamsHeight", 0, "height to which export the randomly generated params")
 	flag.StringVar(&FlagExportStatePathValue, "ExportStatePath", "", "custom file path to save the exported app state JSON")
 	flag.Int64Var(&FlagSeedValue, "Seed", DefaultSeedValue, "simulation random seed")
-	flag.IntVar(&FlagInitialBlockHeightValue, "InitialBlockHeight", 1, "initial block to start the simulation")
-	flag.IntVar(&FlagNumBlocksValue, "NumBlocks", 500, "number of new blocks to simulate from the initial block height")
+	flag.Uint64Var(&FlagInitialBlockHeightValue, "InitialBlockHeight", 1, "initial block to start the simulation")
+	flag.Uint64Var(&FlagNumBlocksValue, "NumBlocks", 500, "number of new blocks to simulate from the initial block height")
 	flag.IntVar(&FlagBlockSizeValue, "BlockSize", 200, "operations per block")
 	flag.BoolVar(&FlagLeanValue, "Lean", false, "lean simulation log output")
 	flag.BoolVar(&FlagCommitValue, "Commit", true, "have the simulation commit")
